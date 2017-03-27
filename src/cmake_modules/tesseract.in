@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 2.8.2)
+ 
+project(tesseract-download NONE)
+ 
+include(ExternalProject)
+
+ExternalProject_Add(tesseract
+  GIT_REPOSITORY    https://github.com/tesseract-ocr/tesseract.git
+  GIT_TAG           master
+  SOURCE_DIR        "${CMAKE_CURRENT_BINARY_DIR}/tesseract-src"
+  BINARY_DIR        "${CMAKE_CURRENT_BINARY_DIR}/tesseract-build"
+  UPDATE_DISCONNECTED 1
+  CONFIGURE_COMMAND ""
+  BUILD_COMMAND     ""
+  INSTALL_COMMAND   ""
+  TEST_COMMAND      ""
+)

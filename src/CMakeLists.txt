@@ -79,6 +79,8 @@ IF(Tesseract_FRAMEWORK_PATH AND Leptonica_FRAMEWORK_PATH)
   # http://www.vtk.org/Wiki/CMake:HowToUseExistingOSXFrameworks
   SET(Tesseract_LIBRARIES "${Tesseract_FRAMEWORK_PATH};${Leptonica_FRAMEWORK_PATH}")
   SET(Tesseract_INCLUDE_DIRS "${Tesseract_FRAMEWORK_PATH}/Headers")
+ELSEIF(WIN32)
+  include(tesseract)
 ELSE()
   FIND_PACKAGE( Tesseract REQUIRED )
 ENDIF()
